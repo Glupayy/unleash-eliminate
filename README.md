@@ -23,26 +23,30 @@ Change these model/data arguments in [main.py](main.py):
 ## A. Cycle-consistency-based Quality Ranking
 First unleash the latent information of candidate layers by contrastive decoding. Then use the model of dual-task (RES) to score the intermediate layer outputs of the contrastive decoding. In this case, the highest-scoring output is taken as the model output. 
 
-Example output: 
+Example outputs: 
 0-7 as candidates: [scores_0_7.json](files/scores_0_7.json); 8-15 as candidates: [scores_8_15.json](files/scores_8_15.json)
 
 Running scripts:
 ```bash
 sh eval/run/run_layers.sh
 #evaluation: METEOR & CHAIRs
-sh huanggb_check_three_metrics/eval_refcocog_scripts_huanggb.sh 
+sh eval/eval_refcocog_scripts.sh 
 ```
 
 
 ## B. Probing-based Hybrid Layer Importance Measurement
-First sample the subset randomly. [Our subset](output/0-7_four_alldataset_repro_0208/sampled_captions.json).
+First sample the subset randomly: [Our subset](output/0-7_four_alldataset_repro_0208/sampled_captions.json).
+
 Then calculate the **layer importance prior**:
 ```bash
+# 1. set the results_dir
 python calculate_prob.py --results_dir output/0-7_four_alldataset_repro_0208
-# define the PHD_LAYERS_PROB as importance prior in the script
-# evaluate hallucinations benchmark with layer importance prior
+# 2. define the PHD_LAYERS_PROB as importance prior in the script
+# 3. evaluate hallucinations benchmark with layer importance prior
 sh eval/run_with_prob/eval_phd.sh
 ```
 
+## Acknowledgement
+We are thankful to GLAMM, Osprey, and DoLA for releasing their models and code as open-source contributions.
 
 
