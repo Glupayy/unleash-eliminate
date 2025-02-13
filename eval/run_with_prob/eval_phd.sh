@@ -1,0 +1,22 @@
+# !/bin/sh
+export PYTHONPATH="./:$PYTHONPATH"
+
+PHD_SCRIPTS="eval/run_with_prob/eval_phd_sub.sh"
+PHD_SAVE_PATHS=(
+    "phd_0-7_four_osprey7b_0209"
+)
+PHD_CHOSED_LAYERS=(
+    "0,1,2,3,4,5,6,7"
+)
+PHD_LAYERS_PROB=(
+    "0.13899, 0.10750, 0.09652, 0.12360, 0.12347, 0.12838, 0.12860, 0.15291"
+)
+MASTER_PORT=23333
+
+for i in "${!PHD_SAVE_PATHS[@]}"; do
+    PHD_SAVE_PATH="${PHD_SAVE_PATHS[$i]}"
+    PHD_CHOSED_LAYER="${PHD_CHOSED_LAYERS[$i]}"
+    PHD_LAYER_PROB="${PHD_LAYERS_PROB[$i]}"
+
+    sh $PHD_SCRIPTS "$MASTER_PORT" "$PHD_SAVE_PATH" "$PHD_CHOSED_LAYER" "$PHD_LAYER_PROB"
+done

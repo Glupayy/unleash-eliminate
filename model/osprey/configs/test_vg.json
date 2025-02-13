@@ -1,0 +1,7 @@
+[
+    {
+        "type": "VGDATA",
+        "ann_file": "/mnt/dolphinfs/hdd_pool/docker/user/hadoop-aipnlp/liangyaoyuan/github/other_llm_box/osprey_data/osprey_dataset/vg_train_with_mask.json",
+        "img_prefix": "/mnt/dolphinfs/hdd_pool/docker/user/hadoop-aipnlp/liangyaoyuan/github/other_llm_box/glamm_data_seg/GLAMM_data/visual_genome/images"
+    }
+]
