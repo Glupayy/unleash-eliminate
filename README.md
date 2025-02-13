@@ -1,7 +1,8 @@
 ## The implementation of ***Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation***.
 TLDR: We propose a simple and effective method to leverage the intermediate layers of MLLMs for increasing descriptive information and mitigating hallucinations.
 
-### Installation
+## Installation
+
 This codebase is built upon [GLAMM](https://github.com/mbzuai-oryx/groundingLMM) and [Osprey](https://github.com/CircleRadon/Osprey). To set up the environment properly, please follow the instructions provided in their respective repositories.
 
 To simplify the setup process, we offer the [conda environment](https://drive.google.com/file/d/17fWE1n37f7nBJdwPPiLApBP_dmhnFywm/view?usp=drive_link). After installing this environment, you can install the editable packages as follows:
@@ -21,6 +22,7 @@ Change these model/data arguments in [main.py](main.py):
 
 
 ### A. Cycle-consistency-based Quality Ranking
+---
 First unleash the latent information of candidate layers by contrastive decoding. Then use the model of dual-task (RES) to score the intermediate layer outputs of the contrastive decoding. In this case, the highest-scoring output is taken as the model output. 
 
 Example outputs: 
@@ -35,6 +37,7 @@ sh eval/eval_refcocog_scripts.sh
 
 
 ### B. Probing-based Hybrid Layer Importance Measurement
+---
 First sample the subset randomly: [Our subset](output/0-7_four_alldataset_repro_0208/sampled_captions.json).
 
 Then calculate the **layer importance prior**:
@@ -46,7 +49,7 @@ python calculate_prob.py --results_dir output/0-7_four_alldataset_repro_0208
 sh eval/run_with_prob/eval_phd.sh
 ```
 
-## Acknowledgement
+### Acknowledgement
 We are thankful to GLAMM, Osprey, and DoLA for releasing their models and code as open-source contributions.
 
 
