@@ -21,8 +21,8 @@ Change these model/data arguments in [main.py](main.py):
 `version_res, version_reg, vision_pretrained, vision_tower, refcoco_image, anno_path`
 
 
-### A. Cycle-consistency-based Quality Ranking
----
+## A. Cycle-consistency-based Quality Ranking
+
 First unleash the latent information of candidate layers by contrastive decoding. Then use the model of dual-task (RES) to score the intermediate layer outputs of the contrastive decoding. In this case, the highest-scoring output is taken as the model output. 
 
 Example outputs: 
@@ -36,8 +36,7 @@ sh eval/eval_refcocog_scripts.sh
 ```
 
 
-### B. Probing-based Hybrid Layer Importance Measurement
----
+## B. Probing-based Hybrid Layer Importance Measurement
 First sample the subset randomly: [Our subset](output/0-7_four_alldataset_repro_0208/sampled_captions.json).
 
 Then calculate the **layer importance prior**:
