@@ -51,4 +51,14 @@ sh eval/run_with_prob/eval_phd.sh
 ### Acknowledgement
 We are thankful to GLAMM, Osprey, and DoLA for releasing their models and code as open-source contributions.
 
-
+### Citation
+```bibtex
+    @article{liang2025unleashing,
+      title={Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation},
+      author={Liang, Yaoyuan and Cai, Zhuojun and Xu, Jian and Huang, Guanbo and Wang, Yiran and Liang, Xiao and Liu, Jiahao and Li, Ziran and Wang, Jingang and Huang, Shao-Lun},
+      journal={Advances in Neural Information Processing Systems},
+      volume={37},
+      pages={120578--120601},
+      year={2025}
+    }
+```
