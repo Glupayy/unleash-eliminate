@@ -1,4 +1,8 @@
-## The implementation of ***Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation***.
+
+<h2 align="center"> 
+Unleashing Region Understanding in Intermediate Layers for MLLM-based Referring Expression Generation
+</a></h2>    
+
 TLDR: We propose a simple and effective method to leverage the intermediate layers of MLLMs for increasing descriptive information and mitigating hallucinations.
 
 ## Installation
